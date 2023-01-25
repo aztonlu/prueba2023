@@ -48,6 +48,7 @@
                     </td>
                     <td>
                         <a href="{{ route('tarea.edit', $tarea) }}">Editar</a>
+                        <a href="{{ route('tarea.show', $tarea) }}">Mostrar </a>
                     </td>
                 </tr>
             @endforeach

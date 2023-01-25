@@ -45,12 +45,12 @@ class TareaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\tarea  $tarea
+     * @param  \App\Models\tarea $tarea
      * @return \Illuminate\Http\Response
      */
     public function show(tarea $tarea)
     {
-        //
+        return view('tarea.show',compact('tarea'));
     }
 
     /**
@@ -86,6 +86,7 @@ class TareaController extends Controller
      */
     public function destroy(tarea $tarea)
     {
-        //
+        $tarea->delete(); 
+        return redirect()->route('tarea.index');
     }
 }
