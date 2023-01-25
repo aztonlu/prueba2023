@@ -1,0 +1,25 @@
+@extends('tema.app')
+
+@section('title'."Editar tarea")
+@section('contenido')
+    <div class="h3">
+        Editar tarea <i>{{ $tarea -> nombre }}</i> 
+        
+    </div>
+
+    <form action="{{ route('tarea.update',$tarea) }}" method="POST">
+        @method('put')
+        @csrf
+        <x-tarea-form-body :tarea="$tarea"/>
+    </form>
+    
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+@endsection
